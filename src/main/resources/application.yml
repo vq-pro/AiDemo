@@ -1,0 +1,26 @@
+# Server
+hostname: http://localhost
+server:
+  port: 8080
+  sessionTimeout: 30
+
+# Tomcat
+tomcat:
+  accessLogEnabled: false
+  protocolHeader: x-forwarded-proto
+  remoteIpHeader: x-forwarded-for
+  backgroundProcessorDelay: 30
+
+# === Backend ===
+
+# To be replaced by profile-specific data
+# Set the default profile as an environment variable on the machine (spring.profiles.active).
+# To override, modify the Run Configuration, adding to the VM options as:
+# -Dspring.profiles.active=XX
+spring:
+  datasource.driverClassName: MUST_USE_PROFILE
+
+# === UI ===
+spring.view:
+  prefix: templates/
+  suffix: .html

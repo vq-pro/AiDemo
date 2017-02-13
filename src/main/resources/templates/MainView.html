@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title th:text="#{${@mainView.MSG_TITLE}}"/>
+</head>
+
+<body>
+<div th:id="VIEW_NAME" th:text="${@mainView.VIEW_NAME}" hidden="hidden"/>
+
+<h1 th:text="#{${@mainView.MSG_TITLE}}"/>
+
+<ul>
+    <li th:each="item : ${items}" th:id="${@mainView.ID_ITEM}" th:text="${item.text}"/>
+</ul>
+
+</body>
+</html>
